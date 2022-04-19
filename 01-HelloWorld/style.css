@@ -1,0 +1,12 @@
+.Good{
+    color: green;
+    font-size: 5rem;
+}
+.Error{
+    color: red;
+    font-size: 5rem;
+}
+.rango_error{
+    color: black;
+    font-size: 5rem;
+}
