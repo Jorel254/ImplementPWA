@@ -14,6 +14,6 @@ const app = Vue.createApp({
               this.count += limit;
           }
           
-      }
-  }
+      },
+  },
 });
