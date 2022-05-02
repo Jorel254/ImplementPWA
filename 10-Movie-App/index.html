@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consult to Apis">
+    <title>Movies-App</title>
+    <!-- Metadata para PWA -->
+    <!-- Modificar la barra de estado ANDROID -->
+    <meta name="theme-color" content="#f5f5dc">
+    <!-- Optimizaciones de SEO -->
+    <meta name="MobileOptimized" content="width">
+    
+    <meta name="HandheldFriendly" content="true">
+    <!-- Modificar barra de estado IOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Iconos -->
+    <link rel="shortcut icon" href="./resources/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./resources/favicon.png">
+    <link rel="apple-touch-startup-image" href="./resources/favicon.png">
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <h1 style="text-align: center;">
+            {{title}}
+        </h1>
+        <hr>
+        <form @submit.prevent="getMovie">
+            <label>
+                Movie name <input type="text" v-model.trim="movieTitle">
+            </label>
+            <input type="submit" value="Get Movie">
+        </form>
+        <hr>
+        <div class="container">
+            <h3>
+                Movie
+                <span style="color: crimson">
+                    {{moviedata.Title}}
+                </span>
+            </h3>
+            <h4>
+                Year
+                <span style="color: green">
+                    {{moviedata.Year}}
+                </span>
+            </h4>
+            <h4>
+            <p>
+                Genre 
+                <strong>
+                    <span style="color: indigo">
+                    {{moviedata.Genre}}
+                    </span>
+                </strong>
+            </p>
+            </h4>
+            <h4>
+                Actors
+                <span style="color: orangered">
+                {{moviedata.Actors}}
+                </span>
+            </h4>
+            <img :src="moviedata.Poster" :alt="moviedata.imdbID">
+        </div>
+    </div> 
+    <script src="./js/main.js"></script>
+    <script src="./load.js"></script>
+    <script src="./js/mountApp.js"></script>
+</body>
+</html>
